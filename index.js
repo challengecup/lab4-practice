@@ -2,9 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
-const booksRoute = require('./routes/books');
+const booksRoute = require('./routes/books.js');
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 
 //middlewares
 app.use(express.json());

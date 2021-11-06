@@ -1,14 +1,12 @@
 const express = require('express');
-const { model } = require('mongoose');
-const books = require('../models/books');
 const router = express.Router();
-const Book = require('../models/books');
+const Book = require('../models/books.js');
 
 //POST: CREATE A NEW BOOK
 router.post("/", (req, res) => {
     book = new Book({
         name: req.body.bookName,
-        author:{
+        author: {
             name: req.body.authorName,
             age: req.body.authorAge
         },
