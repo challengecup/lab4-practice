@@ -18,6 +18,6 @@ router.post("/", (req, res) => {
     }).catch((error) => {
         res.status(500).send("Book was not stored in db");
     })
-})
+});
 
-model.exports = router;
+module.exports = router;
