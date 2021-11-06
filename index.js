@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 const app = express();
-require('dotenv').config();
+dotenv.config();
 const booksRoute = require('./routes/books.js');
 
 //middlewares
