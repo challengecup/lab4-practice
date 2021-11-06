@@ -1,16 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const server = jsonServer.create();
-//const app = express();
+const app = express();
 require('dotenv').config();
 const booksRoute = require('./routes/books.js');
 
 //middlewares
-server.use(express.json());
-server.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 //routes
-server.use('/api/books', booksRoute);
+app.use('/api/books', booksRoute);
 
 //connect to mongodb atlas
 mongoose.connect(process.env.MONGO_URL, {useNewUrlParser:true}).then(() => {
@@ -21,6 +20,6 @@ mongoose.connect(process.env.MONGO_URL, {useNewUrlParser:true}).then(() => {
 
 //start server
 const PORT = process.env.PORT || 3000;
-server.listen(PORT , () => { 
+app.listen(PORT , () => { 
     console.log('Server running on port : ', PORT);
 })
