@@ -61,6 +61,6 @@ router.delete('/:bookId', async (req, res) => {
     const book = await Book.findByIdAndRemove(req.params.bookId);
   if (!book) res.status(404).send("Book with Id not found");
   res.send(book);
-  })
+  });
 
 module.exports = router;
